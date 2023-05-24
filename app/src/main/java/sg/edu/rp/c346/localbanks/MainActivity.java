@@ -99,18 +99,11 @@ TextView textUOB;
                 String text= this.getString(R.string.bankNameEng1);
                 SpannableString ss= new SpannableString(text);
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                if(id==R.id.EnglishSelection){
-                    if(English==true){
-                        ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        textDBS.setText(ss);
-                        textDBS.setTypeface(null, Typeface.BOLD);
-                    }
-                    else{
-                        ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        textDBS.setText(ss);
 
-                    }
-                }
+                ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textDBS.setText(ss);
+                textDBS.setTypeface(null, Typeface.BOLD);
+
 
 
             }
@@ -171,15 +164,19 @@ TextView textUOB;
             else if (id==R.id.Favourite){
                 String text= this.getString(R.string.bankNameEng3);
                 SpannableString ss= new SpannableString(text);
+                String text2=this.getString(R.string.bankNameChi3);
+                SpannableString ss2= new SpannableString(text2);
+
+
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
                 if(English==true){
-                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textOCBC.setText(ss);
-                    textDBS.setTypeface(null, Typeface.BOLD);
+                    ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    textUOB.setText(ss);
+                    textUOB.setTypeface(null, Typeface.BOLD);
                 }
                 else{
                     ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textOCBC.setText(ss);
+                    textUOB.setText(ss2);
 
                 }
 
