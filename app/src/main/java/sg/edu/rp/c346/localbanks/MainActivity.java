@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.TypefaceSpan;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -127,21 +128,13 @@ TextView textUOB;
             else if (id==R.id.Favourite){
                 String text= this.getString(R.string.bankNameEng2);
                 SpannableString ss= new SpannableString(text);
-                String text2=this.getString(R.string.bankNameChi2);
-                SpannableString ss2= new SpannableString(text2);
+
 
 
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                if(English==true){
-                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textOCBC.setText(ss);
-                    textOCBC.setTypeface(null, Typeface.BOLD);
-                }
-                else{
-                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textOCBC.setText(ss2);
-
-                }
+                ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textOCBC.setText(ss);
+                textOCBC.setTypeface(null, Typeface.BOLD);
 
             }
 
@@ -164,21 +157,13 @@ TextView textUOB;
             else if (id==R.id.Favourite){
                 String text= this.getString(R.string.bankNameEng3);
                 SpannableString ss= new SpannableString(text);
-                String text2=this.getString(R.string.bankNameChi3);
-                SpannableString ss2= new SpannableString(text2);
+
 
 
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                if(English==true){
-                    ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textUOB.setText(ss);
-                    textUOB.setTypeface(null, Typeface.BOLD);
-                }
-                else{
-                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    textUOB.setText(ss2);
-
-                }
+                ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                textUOB.setText(ss);
+                textUOB.setTypeface(null, Typeface.BOLD);
 
             }
 
