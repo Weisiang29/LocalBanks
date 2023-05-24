@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 TextView textDBS;
 TextView textOCBC;
 TextView textUOB;
+    boolean English=true;
     String textClicked="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +48,14 @@ TextView textUOB;
             textDBS.setText(this.getString(R.string.bankNameEng1));
             textOCBC.setText(this.getString(R.string.bankNameEng2));
             textUOB.setText(this.getString(R.string.bankNameEng3));
+            English=true;
             return true;
         } else if (id == R.id.ChineseSelection) {
             textDBS.setText(this.getString(R.string.bankNameChi1));
             textOCBC.setText(this.getString(R.string.bankNameChi2));
             textUOB.setText(this.getString(R.string.bankNameChi3));
+            English=false;
+
             return true;
         } else {
             Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();        }
@@ -94,12 +98,20 @@ TextView textUOB;
             else if (id==R.id.Favourite){
                 String text= this.getString(R.string.bankNameEng1);
                 SpannableString ss= new SpannableString(text);
-                ForegroundColorSpan[] spans = ss.getSpans(0, ss.length(), ForegroundColorSpan.class);
-
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                textDBS.setText(ss);
-                textDBS.setTypeface(null, Typeface.BOLD);
+                if(id==R.id.EnglishSelection){
+                    if(English==true){
+                        ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        textDBS.setText(ss);
+                        textDBS.setTypeface(null, Typeface.BOLD);
+                    }
+                    else{
+                        ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        textDBS.setText(ss);
+
+                    }
+                }
+
 
             }
 
@@ -122,10 +134,21 @@ TextView textUOB;
             else if (id==R.id.Favourite){
                 String text= this.getString(R.string.bankNameEng2);
                 SpannableString ss= new SpannableString(text);
+                String text2=this.getString(R.string.bankNameChi2);
+                SpannableString ss2= new SpannableString(text2);
+
+
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                textOCBC.setText(ss);
-                textDBS.setTypeface(null, Typeface.BOLD);
+                if(English==true){
+                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    textOCBC.setText(ss);
+                    textOCBC.setTypeface(null, Typeface.BOLD);
+                }
+                else{
+                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    textOCBC.setText(ss2);
+
+                }
 
             }
 
@@ -149,9 +172,16 @@ TextView textUOB;
                 String text= this.getString(R.string.bankNameEng3);
                 SpannableString ss= new SpannableString(text);
                 ForegroundColorSpan Red= new ForegroundColorSpan(Color.RED);
-                ss.setSpan(Red,0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                textDBS.setText(ss);
-                textDBS.setTypeface(null, Typeface.BOLD);
+                if(English==true){
+                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    textOCBC.setText(ss);
+                    textDBS.setTypeface(null, Typeface.BOLD);
+                }
+                else{
+                    ss.setSpan(Red,0,4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    textOCBC.setText(ss);
+
+                }
 
             }
 
